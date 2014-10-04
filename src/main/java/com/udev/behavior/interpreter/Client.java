@@ -18,8 +18,6 @@ public class Client {
         expressions.add(new NonTerminalExpression());
         expressions.add(new NonTerminalExpression());
 
-        for (Expression e : expressions) {
-            e.interpret(context);
-        }
+        expressions.stream().forEach((Expression e) -> e.interpret(context));
     }
 }
