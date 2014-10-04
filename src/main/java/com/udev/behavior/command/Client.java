@@ -6,8 +6,10 @@ package com.udev.behavior.command;
 public class Client {
     public static void main(String[] args) {
         Receiver receiver = new Receiver();
-        Command command = new ConcreteCommand(receiver);
-        Invoker invoker = new Invoker(command);
-        invoker.invoke();
+        Command command1 = new ConcreteCommand1(receiver);
+        Command command2 = new ConcreteCommand2(receiver);
+        Invoker invoker = new Invoker(command1, command2);
+        invoker.invoke1();
+        invoker.invoke2();
     }
 }
